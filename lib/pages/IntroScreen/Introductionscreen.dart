@@ -1,4 +1,5 @@
 import 'package:agenda_app/pages/HomeScreen.dart';
+import 'package:agenda_app/pages/IntroScreen/introPage1.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -25,9 +26,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               });
             },
             children: [
-              Container(
-                color: Colors.green,
-              ),
+              introPage1(),
               Container(
                 color: Colors.red,
               ),
@@ -36,38 +35,47 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
               )
             ],
           ),
-          Container(
-            alignment: const Alignment(0, 0.75),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      _controller.jumpToPage(2);
-                    },
-                    child: const Text('Skip')),
-                SmoothPageIndicator(
-                    controller: _controller,
-                    effect: const WormEffect(),
-                    count: 3),
-                onLastPage
-                    ? GestureDetector(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const HomeScreen();
-                          }));
-                        },
-                        child: const Text('Done'))
-                    : GestureDetector(
-                        onTap: () {
-                          _controller.nextPage(
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.easeIn);
-                        },
-                        child: const Text('Next'),
-                      )
-              ],
+          Center(
+            child: Container(
+              alignment: const Alignment(0, 0.80),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 120),
+                    child: SmoothPageIndicator(
+                        controller: _controller,
+                        effect: const WormEffect(dotColor: Colors.white),
+                        count: 3),
+                  ),
+                  onLastPage
+                      ? Padding(
+                          padding: const EdgeInsets.only(right: 30),
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const HomeScreen();
+                                }));
+                              },
+                              child: const Text(
+                                'Inicio',
+                                style: TextStyle(fontSize: 20),
+                              )),
+                        )
+                      : Padding(
+                          padding: const EdgeInsets.only(left: 0.0),
+                          child: GestureDetector(
+                              onTap: () {
+                                _controller.jumpToPage(2);
+                              },
+                              child: Icon(
+                                Icons.arrow_right_alt,
+                                size: 35,
+                              )),
+                        ),
+                ],
+              ),
             ),
           )
         ],
