@@ -1,5 +1,6 @@
-import 'package:agenda_app/pages/IntroScreen/Introductionscreen.dart';
 import 'package:flutter/material.dart';
+
+import 'pages/Login UI/login_app.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const IntroductionScreen(),
+      home: LoginApp(),
     );
   }
 }

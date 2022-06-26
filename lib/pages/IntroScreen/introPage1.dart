@@ -1,3 +1,4 @@
+import 'package:agenda_app/Utilerias/Colors.dart';
 import 'package:flutter/material.dart';
 
 class introPage1 extends StatelessWidget {
@@ -6,7 +7,7 @@ class introPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.yellow,
+        backgroundColor: GlobalColors.colorPrincipal,
         body: Column(
           children: [
             Center(

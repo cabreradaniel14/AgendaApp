@@ -1,3 +1,4 @@
+import 'package:agenda_app/Utilerias/Colors.dart';
 import 'package:agenda_app/pages/HomeScreen.dart';
 import 'package:agenda_app/pages/IntroScreen/introPage1.dart';
 import 'package:flutter/material.dart';
@@ -28,11 +29,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
             children: [
               introPage1(),
               Container(
-                color: Colors.red,
+                color: GlobalColors.colorPrincipal,
               ),
-              Container(
-                color: Colors.yellow,
-              )
+              Container(color: GlobalColors.colorPrincipal)
             ],
           ),
           Center(
