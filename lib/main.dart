@@ -1,3 +1,4 @@
+import 'package:agenda_app/pages/Dashborad/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/Login UI/login_app.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginApp(),
+      home: MakeDashboardItems(),
     );
   }
 }
